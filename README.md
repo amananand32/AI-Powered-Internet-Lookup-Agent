@@ -99,8 +99,7 @@ asknet-agent/
 ├── requirements.txt      # Python dependencies
 ├── Dockerfile            # Container definition for backend
 ├── README.md             # Project overview and instructions
-└── docs/
-    └── architecture.md   # High-level architecture and workflow description
+└── architecture.md       # High-level architecture and workflow description
 ```
 
 ---
