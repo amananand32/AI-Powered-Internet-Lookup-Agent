@@ -19,8 +19,6 @@ llm = OllamaLLM(base_url=ollama_url, model="llama3.2:1b")
 search_tool = DuckDuckGoSearchRun()
 
 
-
-
 def log_step(state: AgentState, message: str) -> AgentState:
     steps = state.get("intermediate_steps", [])
     if message not in steps:  # Prevent any duplicate, not just consecutive ones
@@ -71,8 +69,6 @@ def execute_search(state: AgentState):
         return {**state, "search_results": ""} 
 
 
-
-
 def generate_answer(state: AgentState):
     state = log_step(state, "Synthesizing final answer")
     prompt = (
@@ -96,8 +92,6 @@ workflow.add_edge("search", "answer")
 workflow.add_edge("answer", END)
 
 agent = workflow.compile()
-
-
 
 
 
