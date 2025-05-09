@@ -40,6 +40,8 @@ def plan_search(state: AgentState):
         f"\"{state['input']}\"\n\n"
         "Generate ONE well-formed search query. Avoid explanations or punctuation. Include keywords of different types if u find relevant. "
         "Output only the search query, no quotes or extra text."
+        "Analyze the user question,If not needed to search then you can use your own knowledge to answer"
+
     )
     raw_query = llm.invoke(prompt).strip().split('\n')[0]
     query = raw_query.replace('"', '').strip()
